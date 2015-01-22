@@ -30,11 +30,22 @@ public class CelebrityNames
         { 
             Scanner sc = new Scanner( text[j] );
             String firstName = sc.next( );
+            String midName = sc.next( );
             String lastName = sc.next( );
-            reversedName[j] = lastName + ", " + firstName;
+            String birthDate = sc.next( );
+            reversedName[j] =birthDate + " " + lastName + " " + midName + " " + firstName;
+        } 
+        Arrays.sort(reversedName);
+        for (int j = 0; j <= maxIndx; j++)
+        { 
+            Scanner sc = new Scanner( reversedName[j] );
+            String birthDate = sc.next( );
+            String lastName = sc.next( );
+            String midName = sc.next( );
+            String firstName= sc.next( );
+            reversedName[j] =lastName +", "+ midName +", "+ firstName +", "+ birthDate;
         } 
         
-        Arrays.sort(reversedName);
         for (int j =0; j <= maxIndx; j++)
         { 
             System.out.println(reversedName[j]);
